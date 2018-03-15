@@ -23,7 +23,21 @@ passo = (xmax - xmin) / (qtd_pontos-1)
 vet = [xmin]
 for i in range(1, qtd_pontos):
     vet.append (vet[-1]+passo)
-print(vet)
+
+minx=-vb/2*va
+delta = (-vb)**2 - 4*va*vc
+miny = -delta/4*va
+
+plt.cla()
+plt.clf()
+plt.plot (vet, fx, "b")
+plt.plot (minx, miny, "g", marker = "x", markersize = 12, linewidth = 10, markeredgewidth = 2)
+plt.ylabel('y=f(x)')
+plt.xlabel('x')
+plt.draw()
+plt.show()
+
+
 
 fx = [ objfun(x) for x in vet ]
 
